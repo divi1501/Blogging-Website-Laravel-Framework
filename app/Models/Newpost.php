@@ -14,10 +14,10 @@ class Newpost extends Model
     use HasFactory;
     protected $fillable=['title','body', 'user_id'];
 
-    public function toSearchArray($term){
+    public function toSearchableArray(){
         return [
             'title'=> $this->title,
-            'body'->$this->body,
+            'body'=>$this->body
         ];
     }
     public function user(){
